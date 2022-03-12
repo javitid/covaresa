@@ -11,10 +11,14 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('../modules/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
-  // {
-  //   path: '**',
-  //   component: PageNotFoundComponent
-  // },
+  {
+    path: 'error',
+    loadChildren: () => import('../modules/error/error.module').then(m => m.ErrorModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'error/page-not-found',
+  },
 ];
 
 @NgModule({

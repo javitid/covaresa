@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, PrimeIcons } from 'primeng/api';
 
+import { DataService } from 'src/services/data.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,6 +10,10 @@ import { MenuItem, PrimeIcons } from 'primeng/api';
 })
 export class DashboardComponent implements OnInit {
   public items: MenuItem[] = [];
+
+  constructor(
+    private _dataService: DataService
+  ) { }
 
   ngOnInit() {
     this.items = [
@@ -27,5 +33,9 @@ export class DashboardComponent implements OnInit {
         ],
       },
     ];
+  }
+
+  public sendRequest(): void {
+    this._dataService.getDataFromUrl('https://api.github.com/usersfake').subscribe();
   }
 }
