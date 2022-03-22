@@ -9,6 +9,7 @@ import { DataService } from 'src/services/data.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  public calendar: Date = new Date();
   public items: MenuItem[] = [];
 
   constructor(
@@ -36,6 +37,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public sendRequest(): void {
-    this._dataService.getDataFromUrl('https://api.github.com/usersfake').subscribe();
+    console.log(this.calendar);
+    this._dataService.getDataFromUrl('https://api.github.com/search/users?q=alfredo').subscribe();
   }
 }
