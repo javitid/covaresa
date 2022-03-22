@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -7,7 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
-import { MessagesModule, } from 'primeng/messages';
+import { MessagesModule } from 'primeng/messages';
 import { TooltipModule } from 'primeng/tooltip';
 import { MenuModule } from 'primeng/menu';
 import { SlideMenuModule } from 'primeng/slidemenu';
@@ -36,22 +35,18 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { PaginatorModule} from 'primeng/paginator';
+import { PaginatorModule } from 'primeng/paginator';
 import { TagModule } from 'primeng/tag';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { TreeModule } from 'primeng/tree';
 import { EditorModule } from 'primeng/editor';
 import { InputMaskModule } from 'primeng/inputmask';
-import { DividerModule}  from 'primeng/divider';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
-  imports:      [
-    CommonModule
-  ],
   exports: [
     // ANGULAR MODULES
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
 
@@ -97,6 +92,6 @@ import { DividerModule}  from 'primeng/divider';
     EditorModule,
     InputMaskModule,
     DividerModule,
-  ]
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

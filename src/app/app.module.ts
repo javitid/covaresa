@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from '../modules/core/core.module';
 import { GlobalErrorHandlerService } from '../services/global-error-handler.service';
 import { HttpErrorInterceptor } from '../interceptors/http-error-interceptor';
 
@@ -15,12 +16,13 @@ import { HttpErrorInterceptor } from '../interceptors/http-error-interceptor';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    CoreModule,
     HttpClientModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(),
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
-    {provide: ErrorHandler, useClass: GlobalErrorHandlerService},
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
   ],
   bootstrap: [AppComponent],
 })
